@@ -1,0 +1,15 @@
+# macOS-systemfiler
+.DS_Store
+.AppleDouble
+._*
+
+# Midlertidige filer
+*.tmp
+*.temp
+*~
+
+# VS Code lokale indstillinger
+.vscode/
+
+# Adobe midlertidige filer
+*.idlk

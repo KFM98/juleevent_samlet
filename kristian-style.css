@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Beau+Rivage&display=swap");
+
+/* VARIABLER */
+html {
+  --color-page: #f7f7f7;
+  --color-surface: #fff;
+  --color-text: #222;
+  --color-muted: #666;
+  --color-border: #d8d8d8;
+  --red: #9e1b20;
+  --green: #044529;
+  --gold: #d4af37;
+  --cream: #fffbe9;
+  --space-05: 0.5rem;
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+/* GLOBALT LAYOUT */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 75rem) minmax(1rem, 1fr);
+  background: var(--red);
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-column: 1 / -1;
+  align-content: start;
+  padding-block: 5%;
+}
+main > * {
+  grid-column: 2;
+  padding-block: var(--space-3);
+}
+
+/* TYPOGRAFI */
+.beau-rivage-regular,
+.h1form {
+  font-family: "Beau Rivage", cursive;
+  font-weight: 400;
+  color: #ffecc5;
+  padding-bottom: 5%;
+}
+.annie-use-your-telescope-regular,
+.formoverskrift {
+  font-family: "Annie Use Your Telescope", cursive;
+}
+.h1form,
+.p-intro {
+  color: var(--cream);
+  padding-bottom: 5%;
+}
+.overskrift1,
+.kortoverskrift,
+.udforsk {
+  font-family: "Beau Rivage", cursive;
+  font-weight: 400;
+}
+.kortoverskrift,
+.udforsk {
+  /* background: var(--cream); */
+  /* border: 1px solid var(--color-text);
+  border-radius: 8px; */
+  color:var(--cream);
+}
+.kortoverskrift {
+  font-size: 64px;
+  /* padding: 2%; */
+}
+.udforsk {
+  font-size: 2.25rem;
+  color:var(--cream)
+  /* padding:1% */
+}
+.rubrik {
+  /* background: var(--cream); */
+  color: var(--cream);
+  /* border: 1px solid var(--cream);
+  border-radius: 8px; */
+  margin-top:2%;
+  margin-bottom: 2%;
+  padding: 1%;
+}
+
+/* FÆLLES ELEMENTER */
+.panel,
+.svg-placeholder,
+.opsamling-placeholder {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.panel {
+  padding: var(--space-1);
+  display: grid;
+  gap: var(--space-1);
+  background: var(--green);
+}
+.svg-placeholder,
+.opsamling-placeholder {
+  min-height: 0;
+}
+.button {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--color-border);
+  background: #ffecc5;
+  color: inherit;
+  text-decoration: none;
+}
+
+//////* SVG-SIDE *///////
+.svg-page,
+.svg-intro,
+.opsamling-intro,
+.error-page {
+  display: grid;
+  gap: var(--space-1);
+}
+.svg-page {
+  gap: var(--space-2);
+}
+.svg-intro,
+.opsamling-intro,
+.error-page {
+  max-width: 60ch;
+}
+.svg-intro p,
+.opsamling-intro p,
+.error-page p {
+  color: var(--color-muted);
+}
+.svg-layout,
+.opsamling-page {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+}
+.samletinfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.læsmere {
+  background: var(--cream);
+}
+.samletkort {
+  background: var(--green);
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 7%;
+}
+
+/* INTERAKTIV SVG */
+.svg-placeholder {
+  --x: 0%;
+  --y: 0%;
+}
+.nisse {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transform: translate(var(--x), var(--y));
+  transition: transform 0.5s;
+}
+.svg {
+  padding: 5px;
+}
+.svg-placeholder[data-position="punkt1"] {
+  --x: 22%;
+  --y: -10%;
+}
+.svg-placeholder[data-position="punkt2"] {
+  --x: 0%;
+  --y: 40%;
+}
+.svg-placeholder[data-position="punkt3"] {
+  --x: 35%;
+  --y: 40%;
+}
+
+/* ACCORDION */
+.accordion {
+  display: grid;
+  gap: var(--space-05);
+}
+.accordion-item {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  padding: 3%;
+  cursor: pointer;
+  border-radius: 10px;
+  color: var(--cream);
+}
+.accordion-item p {
+  padding: 0 var(--space-1) var(--space-1);
+  color: var(--cream);
+}
+
+/* FORMULARSIDE */
+/* .form-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background: var(--red);
+  padding: 2rem;
+}
+.form-intro {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  color: var(--cream);
+  text-align: center;
+}
+.form-intro h1 {
+  font-family: "Beau Rivage", cursive;
+  font-weight: 400;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1.3;
+}
+.form-intro p {
+  color: var(--cream);
+  line-height: 1.6;
+}
+.form-placeholder {
+  background: var(--green);
+  color: var(--cream);
+  border: 2px solid var(--gold);
+  padding: 3rem;
+  width: 100%;
+  min-width: 0;
+  border-radius: 10px;
+}
+.samletform {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.overskrift1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 1rem;
+}
+.overskrift1 h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.overskrift1 p {
+  font-size: 1rem;
+}
+.ikon img {
+  display: block;
+  width: 32px;
+  height: auto;
+}
+
+.erfaring label {
+  color: #fffbe9;
+} */
+
+/* OPSAMLING OG FEJLSIDE */
+/* .opsamling-page {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+}
+
+/* RESPONSIVT DESIGN */
+@media (min-width: 600px) {
+  .site-nav button {
+    display: none;
+  }
+
+  /* .form-page {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    padding: 4rem;
+    align-items: start;
+  } */
+}
+@media (min-width: 800px) {
+  .svg-layout {
+    grid-template-columns: 1fr min(40%, 36ch);
+  }
+  /* .opsamling-page {
+    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
+  } */
+}
+/* @media (max-width: 600px) {
+  .form-page,
+  .form-placeholder {
+    padding: 1.5rem;
+  } */
+  .samletinfo {
+    grid-template-columns: 1fr;
+  }
+} */
+
+/////* Min formularside. Vi bruger Fionas, derfor er denne del udkommenteret */////
+
+/* .personlige-felter {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.personlige-felter input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--cream);
+  color: #000;
+}
+
+.formoverskrift {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.opgaver {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.opgaver label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.opgaver input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+@media (max-width: 600px) {
+  .opgaver {
+    grid-template-columns: 1fr;
+  }
+}
+
+.erfaring {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.erfaring > label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.erfaring input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+
+.erfaring-uddybning {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.erfaring-uddybning textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--cream);
+  resize: vertical;
+}
+
+/* Vis tekstfeltet, når "Ja" er valgt */
+/* .erfaring:has(input[value="ja"]:checked) .erfaring-uddybning {
+  display: flex;
+}
+
+.tilgaengelighed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+} */
+
+/* .datoer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.datoer label,
+.alle-dage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.tilgaengelighed input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+} */
+
+/* SÆRLIGE HENSYN */
+/* .form5 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.saerlige-hensyn textarea {
+  width: 100%;
+  padding: 1rem;
+  background: #d9d9d9;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  resize: vertical;
+  font: inherit;
+} */
+
+/* TILMELDINGSKNAP */
+/* .tilmeld-knap {
+  align-self: center;
+  background: #8f0500;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.tilmeld-knap:hover {
+  background: #c00000;
+}
+
+.dropdown-opgave {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.dropdown-opgave select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--cream);
+  color: var(--color-text);
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+} */ */

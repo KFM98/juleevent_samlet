@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formular | Eventnavn</title>
+    <link rel="stylesheet" href="./starter.css" />
+    <link rel="stylesheet" href="./fiona-style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <img class="logo" src="./assets/logo.svg" alt="Logo" />
+          <a class="site-logo" href="./">Giv Julen Videre</a>
+        </div>
+
+        <nav class="site-nav" aria-label="Hovedmenu">
+          <button type="button" popovertarget="menu">Menu</button>
+
+          <ul class="menu" id="menu" popover>
+            <li><a class="menu-item" href="./">Forside</a></li>
+            <li><a class="menu-item" href="./svg.html">Kort</a></li>
+            <li><a class="menu-item" href="./form.html" aria-current="page"> Bliv julehjælper </a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="form-page">
+        <header class="form-intro">
+          <h1>Tilmelding: Bliv frivillig til årets Juleværksted</h1>
+
+          <p>
+            Vil du være med til at sprede julemagi? Vi samles om at lave julegaver og samle ind til familier, der har brug for en ekstra hånd til julen. Værkstederne har åbent 12.–15. november 2026 (kl. 16–22). Som tak for hjælpen sørger vi for
+            gratis mad og drikke! Udfyld formularen herunder:
+          </p>
+        </header>
+
+        <form class="form-placeholder" action="./opsamling.html" method="get">
+          <!-- PERSONLIGE OPLYSNINGER -->
+          <fieldset>
+            <legend class="overskrift-form">Dine personlige oplysninger</legend>
+
+            <p class="underoverskrift-form">Hvordan kan vi få fat på dig?</p>
+
+            <div class="personlige-oplysninger-grid">
+              <img src="assets/julemand.png" alt="Julemand" class="julemand" />
+
+              <div class="kontaktfelter">
+                <div>
+                  <label for="fulde-navn">Fulde navn</label>
+                  <input type="text" id="fulde-navn" name="navn" autocomplete="name" required />
+                </div>
+
+                <div>
+                  <label for="field-email">Email</label>
+                  <input type="email" id="field-email" name="email" autocomplete="email" required />
+                </div>
+
+                <div>
+                  <label for="field-phone">Telefon</label>
+                  <input type="tel" id="field-phone" name="telefon" autocomplete="tel" required />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- OPGAVER -->
+          <fieldset>
+            <legend class="overskrift-form">Vælg en opgave</legend>
+
+            <p class="underoverskrift-form">Hvad vil du helst hjælpe med? (Flere krydser tilladt!)</p>
+            <details class="checkbox-dropdown">
+              <summary>Vælg opgaver</summary>
+
+              <label for="field-opgave-1">
+                <input type="checkbox" id="field-opgave-1" name="opgave" value="male-keramik" />
+                Male keramik
+              </label>
+
+              <label for="field-opgave-2">
+                <input type="checkbox" id="field-opgave-2" name="opgave" value="linoleumstryk" />
+                Linoleumstryk
+              </label>
+
+              <label for="field-opgave-3">
+                <input type="checkbox" id="field-opgave-3" name="opgave" value="julemand" />
+                Julemand
+              </label>
+
+              <label for="field-opgave-4">
+                <input type="checkbox" id="field-opgave-4" name="opgave" value="lave-smykker" />
+                Lave smykker
+              </label>
+
+              <label for="field-opgave-5">
+                <input type="checkbox" id="field-opgave-5" name="opgave" value="madboder" />
+                Madboder
+              </label>
+
+              <label for="field-opgave-6">
+                <input type="checkbox" id="field-opgave-6" name="opgave" value="lave-julekranse" />
+                Lave julekranse
+              </label>
+
+              <label for="field-opgave-7">
+                <input type="checkbox" id="field-opgave-7" name="opgave" value="klippe-klistre" />
+                Klippe-klistre
+              </label>
+
+              <label for="field-opgave-8">
+                <input type="checkbox" id="field-opgave-8" name="opgave" value="hvor-der-er-brug-for-det" />
+                Hvor der er mest brug for det!
+              </label>
+            </details>
+          </fieldset>
+
+          <!-- ERFARING -->
+          <fieldset>
+            <legend class="overskrift-form">Erfaring & baggrund</legend>
+
+            <p class="underoverskrift-form">Lidt om dine kendskaber og erfaringer</p>
+
+            <label for="field-kendskaber-1">
+              <input type="radio" id="field-kendskaber-1" name="kendskaber" value="ja" />
+              Ja, jeg har prøvet det før
+            </label>
+
+            <div>
+              <label for="field-uddyb">Uddyb gerne</label>
+              <input type="text" id="field-uddyb" name="uddyb" />
+            </div>
+
+            <label for="field-kendskaber-2">
+              <input type="radio" id="field-kendskaber-2" name="kendskaber" value="nej" />
+              Nej, men jeg lærer det hurtigt!
+            </label>
+          </fieldset>
+
+          <!-- TID OG TILGÆNGELIGHED -->
+          <fieldset>
+            <legend class="overskrift-form">Tid & tilgængelighed</legend>
+
+            <p class="underoverskrift-form">Hvornår kan du deltage? (Kl. 16:00–22:00)</p>
+            <details class="checkbox-dropdown">
+              <summary>Tid & tilgængelighed</summary>
+
+              <label for="field-tidspunkt-1">
+                <input type="checkbox" id="field-tidspunkt-1" name="tidspunkt" value="torsdag-12" />
+                Tors. d. 12. nov.
+              </label>
+
+              <label for="field-tidspunkt-2">
+                <input type="checkbox" id="field-tidspunkt-2" name="tidspunkt" value="fredag-13" />
+                Fre. d. 13. nov.
+              </label>
+
+              <label for="field-tidspunkt-3">
+                <input type="checkbox" id="field-tidspunkt-3" name="tidspunkt" value="lordag-14" />
+                Lør. d. 14. nov.
+              </label>
+
+              <label for="field-tidspunkt-4">
+                <input type="checkbox" id="field-tidspunkt-4" name="tidspunkt" value="sondag-15" />
+                Søn. d. 15. nov.
+              </label>
+
+              <label for="field-tidspunkt-5">
+                <input type="checkbox" id="field-tidspunkt-5" name="tidspunkt" value="alle-dage" />
+                Alle dage!
+              </label>
+            </details>
+          </fieldset>
+
+          <!-- SÆRLIGE HENSYN -->
+          <fieldset>
+            <legend class="overskrift-form">Særlige hensyn</legend>
+
+            <label for="field-saerlige-hensyn"> Er der noget, vi bør vide? </label>
+
+            <textarea id="field-saerlige-hensyn" name="saerlige-hensyn" rows="4"></textarea>
+          </fieldset>
+
+          <!-- SEND FORMULAR -->
+          <button type="submit">Bliv julehjælper</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="logo-wrapper">
+          <img class="logo" src="assets/logo.svg" alt="Logo" />
+          <p>Giv Julen Videre</p>
+        </div>
+        <div class="footer-wrapper"><p>Kristian, Fiona og Philippa</p></div>
+      </div>
+    </footer>
+
+    <script src="./fiona-script.js"></script>
+  </body>
+</html>

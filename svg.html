@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="da">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Beau+Rivage&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interaktiv SVG | Eventnavn</title>
+  <link rel="stylesheet" href="./starter.css" />
+  <link rel="stylesheet" href="./kristian-style.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <div class="logo-wrapper">
+      <img class="logo" src="./assets/logo.svg" alt="Logo" />
+      <a class="site-logo" href="./">Giv Julen Videre</a>
+    </div>
+
+    <nav class="site-nav">
+      <button popovertarget="menu">Menu</button>
+      <ul class="menu" id="menu" popover>
+        <li>
+          <a class="menu-item" href="./">Forside</a>
+        </li>
+        <li>
+          <a class="menu-item" href="./svg.html" aria-current="page">Kort</a>
+        </li>
+        <li>
+          <a class="menu-item" href="./form.html">Bliv julehjælper</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <div class="samletkort">
+      <section class="svg-page">
+        <header class="svg-intro">
+          <h1 class="kortoverskrift">Kort over julemarkedet</h1>
+          <p class="rubrik">Udforsk Valbyparkens mange juleværksteder</p>
+        </header>
+
+        <section class="svg-layout">
+          <div class="svg-placeholder">
+
+            <svg class="julekort" viewBox="0 0 1600 900" aria-hidden="true">
+              <use class="baggrund" href="./julekort2.svg#baggrund"></use>
+              <use class="nisse" href="./julekort2.svg#nisse"></use>
+            </svg>
+
+          </div>
+
+
+          <article class="panel">
+            <h2 class="udforsk">Udforsk eventet</h2>
+            <div class="accordion">
+              <!-- TODO: Lav om til details/summary -->
+              <details class="accordion-item" id="punkt1" name="steder" data-position="punkt1">
+                <summary>Klippeklister</summary>
+                <p>Her kan du lave klippeklister til alle julens gaver, måske til din familie eller andre du holder af!
+                  Det er kun fantasien, der sætter grænser</p>
+              </details>
+              <details class="accordion-item" id="punkt2" name="steder" data-position="punkt2">
+                <summary>Smykkeværksted</summary>
+                <p>I smykkeværkstedet kan du lave flotte og skinnende ting, som helt sikkert får mere charme, end hvis
+                  du blot havde købt dem i butikken. Det er tanken der tæller!</p>
+              </details>
+              <details class="accordion-item" id="punkt3" name="steder" data-position="punkt3">
+                <summary>Madboder</summary>
+                <p>Kom forbi madboderne, når sulten melder sig! Om du er til æbleskiver, småkager eller glohed glögg, så
+                  er
+                  du dækket ind!</p>
+              </details>
+            </div>
+          </article>
+        </section>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="logo-wrapper">
+          <img class="logo" src="assets/logo.svg" alt="Logo" />
+          <p>Giv Julen Videre</p>
+        </div>
+        <div class="footer-wrapper"><p>Kristian, Fiona og Philippa</p></div>
+      </div>
+    </footer>
+  <script src="./kristian-script.js"></script>
+</body>
+
+</html>

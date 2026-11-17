@@ -1,0 +1,667 @@
+/* Variabler */
+html {
+  --color-page: #8f0500;
+  --color-surface: #fff;
+  --color-text: #222;
+  --color-muted: #666;
+  --color-border: #8f0500;
+  --space-05: 0.5rem;
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+/* Globalt layout */
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(1rem, 1fr) minmax(0, 75rem) minmax(1rem, 1fr);
+  background-color: #8f0500;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-column: 1 / -1;
+  align-content: start;
+}
+
+main > * {
+  grid-column: 2;
+  padding-block: var(--space-3);
+}
+
+.svg-page {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.svg-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.svg-intro p {
+  color: var(--color-muted);
+}
+
+.svg-layout {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  @media (width > 800px) {
+    grid-template-columns: 1fr min(40%, 36ch);
+  }
+}
+
+.form-page {
+  display: grid;
+  gap: var(--space-2);
+  @media (width > 600px) {
+    grid-template-columns: min(40%, 50ch) 1fr;
+  }
+}
+
+.form-intro {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  max-width: 60ch;
+}
+
+.form-intro p {
+  color: var(--color-muted);
+}
+
+.error-page {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.error-page p {
+  color: var(--color-muted);
+}
+
+/* Header og footer */
+
+/* Navigation */
+
+/* Flader */
+.panel,
+.svg-placeholder,
+.form-placeholder,
+.opsamling-placeholder {
+  background: #044529;
+  border: 3px solid #d4af37;
+}
+
+.panel {
+  padding: var(--space-1);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.svg-placeholder,
+.opsamling-placeholder {
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+}
+
+.form-placeholder {
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+  padding: var(--space-1);
+}
+
+/* Details */
+.accordion {
+  display: grid;
+  gap: var(--space-05);
+}
+
+.accordion-item {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.accordion-item p {
+  padding: 0 var(--space-1) var(--space-1);
+  color: var(--color-muted);
+}
+
+/* Knap/link */
+.button {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--color-border);
+  background: #ffecc5;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HERUNDER ER MIN EGEN CSS-TILFØJELSER */
+.samletinfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.læsmere {
+  background-color: #fffbe9;
+}
+
+.hero-container {
+  grid-column: 1 / -1;
+  display: grid;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.baggrunds-postkort {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.indhold-ovenpaa {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.indhold-ovenpaa h1 {
+  max-width: 800px;
+  text-shadow: rgba(0, 0, 0, 0.6);
+}
+
+.indhold-ovenpaa img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================
+   JULEVÆRKSTED - FORMULAR
+===================================== */
+
+/* FARVER */
+html {
+  --color-page: #8f0500;
+  --color-groen: #044529;
+  --color-creme: #fffbe9;
+  --color-lys-creme: #ffecc5;
+  --color-guld: #d4af37;
+  --color-brun: #562400;
+}
+
+/* FORMULARENS LAYOUT */
+.form-page {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 2rem;
+  align-items: start;
+  padding-block: 5rem;
+}
+
+/* VENSTRE SIDE */
+.form-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-creme);
+}
+
+.form-intro h1 {
+  font-family: cursive;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.form-intro p {
+  color: var(--color-creme);
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 0;
+  max-width: 38ch;
+}
+
+/* GRØN FORMULAR */
+.form-placeholder {
+  background-color: var(--color-groen);
+  border: 2px solid var(--color-guld);
+  border-radius: 8px;
+  padding: 4rem 3rem;
+  color: var(--color-creme);
+  min-height: auto;
+  box-sizing: border-box;
+}
+
+/* FELTGRUPPER */
+.form-placeholder fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  min-width: 0;
+}
+
+/* OVERSKRIFTER */
+.form-placeholder .overskrift-form {
+  font-family: cursive;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--color-lys-creme);
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* UNDEROVERSKRIFTER */
+.form-placeholder .underoverskrift-form {
+  font-size: 0.95rem;
+  color: var(--color-creme);
+  padding: 0;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* LABELS */
+.form-placeholder label {
+  color: var(--color-creme);
+  font-size: 0.9rem;
+}
+
+/* TEKSTFELTER */
+.form-placeholder input[type="text"],
+.form-placeholder input[type="email"],
+.form-placeholder input[type="tel"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-creme);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-brun);
+}
+
+/* CHECKBOXE */
+.form-placeholder input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-guld);
+  margin: 0 0.8rem 0 0;
+  flex-shrink: 0;
+}
+
+/* RADIOKNAPPER */
+.form-placeholder input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-guld);
+  margin: 0 0.8rem 0 0;
+  flex-shrink: 0;
+}
+
+/* LABELS MED CHECKBOX OG RADIO */
+.form-placeholder label:has(input[type="checkbox"]),
+.form-placeholder label:has(input[type="radio"]) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+/* OPGAVER I TO KOLONNER */
+.form-placeholder fieldset:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+}
+
+.form-placeholder fieldset:nth-of-type(2) legend,
+.form-placeholder fieldset:nth-of-type(2) p {
+  grid-column: 1 / -1;
+}
+
+/* ERFARING */
+.form-placeholder fieldset:nth-of-type(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-placeholder fieldset:nth-of-type(3) input[type="text"] {
+  background-color: #d9d9d9;
+}
+
+/* TID OG TILGÆNGELIGHED */
+.form-placeholder fieldset:nth-of-type(4) {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* SÆRLIGE HENSYN */
+.form-placeholder textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  box-sizing: border-box;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  resize: vertical;
+}
+
+/* SEND KNAP */
+.form-placeholder button[type="submit"] {
+  display: block;
+  background-color: var(--color-page);
+  color: var(--color-creme);
+  border: none;
+  padding: 1rem 2.5rem;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.form-placeholder button[type="submit"]:hover {
+  background-color: var(--color-brun);
+}
+
+/* Styling af dropdown-menuer */
+.checkbox-dropdown {
+  background-color: #d4af37;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Styling af julemand og kontaktinfo */
+.personlige-oplysninger-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.personlige-oplysninger-grid .julemand {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+.kontaktfelter {
+  display: grid;
+  gap: 1rem;
+}
+
+/* RESPONSIVT DESIGN */
+@media (max-width: 800px) {
+  .form-page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2rem;
+  }
+
+  .form-intro {
+    padding: 1rem;
+  }
+
+  .form-placeholder {
+    padding: 2rem;
+  }
+
+  .form-placeholder fieldset {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-placeholder fieldset:nth-of-type(2) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gør header-content til et flex-container, så tingene står ved siden af hinanden */
+.header-content {
+  display: flex;
+  align-items: center; /* Sørger for at logo og tekst er centreret ud for hinanden lodret */
+  gap: 12px; /* Styrer afstanden mellem logoet og teksten */
+}
+
+/* Sæt en fast højde eller bredde på logoet, så det ikke fylder hele skærmen */
+.site-header img {
+  height: 40px; /* Juster denne størrelse, så den passer til dit design */
+  width: auto; /* Bevarer billedets oprindelige proportioner */
+}
+
+/* =====================================
+   OPSAMLINGSSIDE
+===================================== */
+
+body:has(.opsamling-page) {
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, 75rem)
+    minmax(1rem, 1fr);
+}
+
+/* HELE SIDEN */
+.opsamling-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 5rem 1rem;
+}
+
+/* TAKKETEKST */
+.opsamling-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: none;
+  min-width: 0;
+  padding: 2rem 1rem;
+  color: #fffbe9;
+}
+
+.opsamling-intro h1 {
+  font-family: "Beau Rivage", cursive;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.opsamling-intro p {
+  color: #fffbe9;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* GRØNT JULEHJÆLPERPAS */
+.opsamling-placeholder {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: auto;
+  box-sizing: border-box;
+  overflow: visible;
+
+  background-color: #044529;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 4rem 2.5rem;
+
+  color: #fffbe9;
+  text-align: center;
+}
+
+/* NISSEHUE */
+.opsamling-placeholder {
+  position: relative;
+  overflow: visible;
+}
+
+.opsamling-placeholder .opsamling-nissehue {
+  position: absolute;
+  display: block;
+  width: 350px;
+  max-width: none;
+  height: auto;
+
+  top: -120px;
+  right: -50px;
+  z-index: 10;
+}
+
+/* OVERSKRIFT PÅ PAS */
+.opsamling-placeholder h2 {
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #ffecc5;
+}
+
+.opsamling-placeholder p {
+  color: #fffbe9;
+}
+
+/* OPLYSNINGER */
+.pas-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  text-align: left;
+}
+
+.pas-info h3 {
+  color: #d4af37;
+  font-size: 1rem;
+}
+
+.pas-info p {
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+
+/* AFSLUTTENDE BESKED */
+.pas-besked {
+  border-top: 1px solid #d4af37;
+  padding-top: 2rem;
+}
+
+/* TILBAGE-KNAP */
+.opsamling-intro .button {
+  display: inline-block;
+  background-color: #fffbe9;
+  color: #562400;
+  border: none;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+/* =====================================
+   DESKTOP
+===================================== */
+
+@media (min-width: 900px) {
+  .opsamling-page {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    gap: 3rem;
+    padding: 6rem 2rem;
+  }
+
+  .opsamling-intro {
+    padding-top: 3rem;
+  }
+
+  .opsamling-placeholder {
+    padding: 4rem 3rem;
+  }
+}
+
+/* =====================================
+   MOBIL OG TABLET
+===================================== */
+
+@media (max-width: 899px) {
+  .opsamling-page {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 1rem;
+  }
+
+  .opsamling-placeholder {
+    padding: 3rem 1.5rem;
+  }
+
+  .opsamling-placeholder .opsamling-nissehue {
+    width: 120px;
+    top: -45px;
+    right: -10px;
+  }
+}
+
+/* SMÅ MOBILER */
+@media (max-width: 599px) {
+  .pas-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* MOBIL */
+@media (max-width: 899px) {
+  .opsamling-placeholder .opsamling-nissehue {
+    width: 220px;
+    top: -75px;
+    right: -20px;
+  }
+}
