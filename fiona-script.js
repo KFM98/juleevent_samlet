@@ -17,3 +17,9 @@ if (visNavn && visOpgave && visDato) {
 
   visDato.textContent = datoer.length > 0 ? datoer.join(", ") : "Ingen dato valgt";
 }
+const pas = document.querySelector(".opsamling-placeholder");
+const opgave = document.querySelector("#vis-opgave");
+
+if (pas && opgave && opgave.textContent.toLowerCase().includes("julemand")) {
+  pas.classList.add("julemand");
+}

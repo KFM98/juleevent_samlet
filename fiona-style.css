@@ -676,3 +676,19 @@ body:has(.opsamling-page) {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Version 2: Julemand */
+.opsamling-placeholder.julemand {
+  background-color: #d4af37;
+  color: #044529;
+}
+
+.opsamling-placeholder.julemand h2,
+.opsamling-placeholder.julemand h3,
+.opsamling-placeholder.julemand p {
+  color: #044529;
+}
+
+.pas-besked.julemand {
+  color: var(--color-creme);
+}
